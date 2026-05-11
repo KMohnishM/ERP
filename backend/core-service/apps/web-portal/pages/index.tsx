@@ -1,5 +1,5 @@
-import React from '\''react'\'';
-import Sidebar from '\''@/components/layout/Sidebar'\'';
+import React from "react";
+import Sidebar from "@/components/layout/Sidebar";
 
 const IndexPage = () => {
   return (
@@ -13,10 +13,10 @@ const IndexPage = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {[
-            { label: '\''Total Revenue'\'', value: '\''$124,500'\'', color: '\''border-blue-500'\'' },
-            { label: '\''Active Employees'\'', value: '\''430'\'', color: '\''border-emerald-500'\'' },
-            { label: '\''Stock Alerts'\'', value: '\''12 Items'\'', color: '\''border-amber-500'\'' },
-            { label: '\''AI Recommendations'\'', value: '\''5 New'\'', color: '\''border-purple-500'\'' },
+            { label: "Total Revenue", value: "$124,500", color: "border-blue-500" },
+            { label: "Active Employees", value: "430", color: "border-emerald-500" },
+            { label: "Stock Alerts", value: "12 Items", color: "border-amber-500" },
+            { label: "AI Recommendations", value: "5 New", color: "border-purple-500" },
           ].map((stat) => (
             <div key={stat.label} className={`bg-white p-6 rounded-xl shadow-sm border-l-4 ${stat.color} hover:shadow-md transition-shadow`}>
               <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">{stat.label}</p>
