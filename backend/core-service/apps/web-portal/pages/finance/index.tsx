@@ -1,4 +1,4 @@
-
+﻿
 import React from "react";
 import Sidebar from "@/components/layout/Sidebar";
 import { TrendingUp, TrendingDown, Landmark, FileSpreadsheet } from "lucide-react";
@@ -49,7 +49,7 @@ export default function FinancePage() {
                     </div>
                     <div>
                       <p className="font-bold text-slate-800">Office Maintenance Vendor</p>
-                      <p className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Debit � Operations</p>
+                      <p className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Debit • Operations</p>
                     </div>
                   </div>
                   <p className="font-black text-slate-900">-$450.00</p>
@@ -60,7 +60,7 @@ export default function FinancePage() {
           <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
             <h2 className="font-bold text-slate-800 mb-6">Tax Liability (Q2)</h2>
             <div className="space-y-6">
-              <div className="relative pt-1">
+               <div className="relative pt-1">
                 <div className="flex mb-2 items-center justify-between">
                   <span className="text-xs font-bold uppercase text-slate-500">VAT Collected</span>
                   <span className="text-xs font-black text-slate-900">$12,400</span>
@@ -85,3 +85,4 @@ export default function FinancePage() {
     </div>
   );
 }
+

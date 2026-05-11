@@ -1,4 +1,4 @@
-
+﻿
 import React from "react";
 import Sidebar from "@/components/layout/Sidebar";
 import { BrainCircuit, Sparkles, Wand2, Zap, MessageSquare } from "lucide-react";
