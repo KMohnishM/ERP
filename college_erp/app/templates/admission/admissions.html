@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2>Student Admissions</h2>
+        <p class="text-muted">Manage all student admissions</p>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">All Students</h5>
+                <a href="{{ url_for('admission.new_admission') }}" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> New Admission
+                </a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="students-table">
+                        <thead>
+                            <tr>
+                                <th>Admission ID</th>
+                                <th>Name</th>
+                                <th>Course</th>
+                                <th>Batch</th>
+                                <th>Gender</th>
+                                <th>Admission Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for student in students %}
+                            <tr>
+                                <td>{{ student.admission_id }}</td>
+                                <td>{{ student.first_name }} {{ student.last_name }}</td>
+                                <td>{{ student.course.name }}</td>
+                                <td>{{ student.batch_year }}</td>
+                                <td>{{ student.gender|capitalize }}</td>
+                                <td>{{ student.admission_date.strftime('%Y-%m-%d') }}</td>
+                                <td>
+                                    <a href="{{ url_for('admission.view_admission', student_id=student.id) }}" class="btn btn-sm btn-info">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="{{ url_for('admission.edit_admission', student_id=student.id) }}" class="btn btn-sm btn-warning">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="{{ url_for('fees.student_fees', student_id=student.id) }}" class="btn btn-sm btn-success">
+                                        <i class="fas fa-money-bill"></i>
+                                    </a>
+                                    <a href="{{ url_for('exam.student_results', student_id=student.id) }}" class="btn btn-sm btn-primary">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize DataTable for better sorting and searching
+        $('#students-table').DataTable({
+            order: [[5, 'desc']] // Sort by admission date descending
+        });
+    });
+</script>
+{% endblock %}

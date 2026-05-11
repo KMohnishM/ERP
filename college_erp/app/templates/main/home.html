@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 text-center mb-5">
+        <h1>Welcome to College ERP System</h1>
+        <p class="lead">A comprehensive solution for college management</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-user-graduate fa-3x mb-3 text-primary"></i>
+                <h3 class="card-title">Admissions</h3>
+                <p class="card-text">Streamline the admission process with online forms and centralized student database.</p>
+                {% if current_user.is_authenticated and current_user.role in ['admin', 'staff'] %}
+                <a href="{{ url_for('admission.admissions') }}" class="btn btn-primary">View Admissions</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-money-bill-wave fa-3x mb-3 text-success"></i>
+                <h3 class="card-title">Fee Collection</h3>
+                <p class="card-text">Manage fee structures, collect payments, and generate automated receipts.</p>
+                {% if current_user.is_authenticated and current_user.role in ['admin', 'staff'] %}
+                <a href="{{ url_for('fees.fees') }}" class="btn btn-success">View Fees</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-home fa-3x mb-3 text-warning"></i>
+                <h3 class="card-title">Hostel Management</h3>
+                <p class="card-text">Track hostel occupancy, manage room allocations, and monitor vacancies in real time.</p>
+                {% if current_user.is_authenticated and current_user.role in ['admin', 'staff'] %}
+                <a href="{{ url_for('hostel.hostels') }}" class="btn btn-warning">View Hostels</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-book fa-3x mb-3 text-danger"></i>
+                <h3 class="card-title">Examination Records</h3>
+                <p class="card-text">Organize exams, record results, and analyze performance metrics.</p>
+                {% if current_user.is_authenticated and current_user.role in ['admin', 'staff'] %}
+                <a href="{{ url_for('exam.examinations') }}" class="btn btn-danger">View Examinations</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-chart-bar fa-3x mb-3 text-info"></i>
+                <h3 class="card-title">Analytics Dashboard</h3>
+                <p class="card-text">Access comprehensive reports and visual analytics for informed decision-making.</p>
+                {% if current_user.is_authenticated and current_user.role in ['admin', 'staff'] %}
+                <a href="{{ url_for('dashboard.dashboard') }}" class="btn btn-info">View Dashboard</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-user-lock fa-3x mb-3 text-secondary"></i>
+                <h3 class="card-title">Secure Access</h3>
+                <p class="card-text">Role-based access ensures data security with appropriate permissions for all users.</p>
+                {% if not current_user.is_authenticated %}
+                <a href="{{ url_for('auth.login') }}" class="btn btn-secondary">Login Now</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

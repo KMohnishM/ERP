@@ -1,0 +1,72 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="jumbotron text-center mb-4">
+    <h1 class="display-4">Welcome to College ERP System</h1>
+    <p class="lead">A lightweight solution for educational institutions</p>
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h2>System Features</h2>
+        <p>This system provides comprehensive tools for managing college operations</p>
+        
+        <div class="row mt-4">
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-user-graduate fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Admissions</h5>
+                        <p class="card-text">Manage student applications, enrollments, and academic records</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-money-bill-wave fa-3x text-success mb-3"></i>
+                        <h5 class="card-title">Fee Management</h5>
+                        <p class="card-text">Handle fee collections, payment schedules, and financial records</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-home fa-3x text-warning mb-3"></i>
+                        <h5 class="card-title">Hostel Management</h5>
+                        <p class="card-text">Manage room allocations, hostel facilities, and student accommodations</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-file-alt fa-3x text-danger mb-3"></i>
+                        <h5 class="card-title">Examination System</h5>
+                        <p class="card-text">Handle exam scheduling, results processing, and grade management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="alert alert-info mt-4">
+            <p><strong>Status:</strong> The system is currently in development mode. Please follow the setup instructions to get it running.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .card {
+        transition: transform 0.3s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+{% endblock %}
